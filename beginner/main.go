@@ -23,7 +23,7 @@ func main() {
 	//===================COLLECTION=====================//
 	fmt.Printf("Length of an array: %v\n", len(collection.Array()))
 
-	slice := collection.Slice()
+	slice := collection.SliceLiteral()
 	slice = append(slice, 1)
 	slice = append(slice, 9)
 
@@ -33,6 +33,15 @@ func main() {
 
 	for i, v := range slice {
 		fmt.Printf("Element %v has value %v \n", i, v)
+	}
+
+	sliceByMake := collection.SliceByMake()
+	fmt.Printf("Len %v:\nCap %v:\n", len(sliceByMake), cap(sliceByMake))
+
+	var mySlice = sliceByMake[:5]
+
+	for _, v := range mySlice {
+		fmt.Printf("%v\n", v)
 	}
 
 }
