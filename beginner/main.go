@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 
-	c "github.com/kainguyen/beginner/calc"
+	"github.com/kainguyen/beginner/calc"
+	"github.com/kainguyen/beginner/collection"
 	"github.com/kainguyen/beginner/iteration"
-	r "github.com/kainguyen/beginner/rune"
+	"github.com/kainguyen/beginner/rune"
+	"github.com/kainguyen/beginner/scope"
 )
 
 func main() {
@@ -14,37 +16,40 @@ func main() {
 
 	fmt.Printf("Value of chuoi is: %v \n , %v \n", chuoi, chuoi1)
 
-	fmt.Printf("sum = %v \n", c.Sum2Number(1, 2))
-	fmt.Printf("divide = %v \n", c.Divide(9, 10))
+	fmt.Printf("sum = %v \n", calc.Sum2Number(1, 2))
+	fmt.Printf("divide = %v \n", calc.Divide(9, 10))
 
 	var funnyString string = "Hello World"
-	r.GetRuneOfString(funnyString)
+	rune.GetRuneOfString(funnyString)
 
 	//===================COLLECTION=====================//
-	// fmt.Printf("Length of an array: %v\n", len(collection.Array()))
+	fmt.Printf("Length of an array: %v\n", len(collection.Array()))
 
-	// slice := collection.SliceLiteral()
-	// slice = append(slice, 1)
-	// slice = append(slice, 9)
+	slice := collection.SliceLiteral()
+	slice = append(slice, 1)
+	slice = append(slice, 9)
 
-	// for j := 0; j < len(slice); j++ {
-	// 	fmt.Printf("Element %v has value %v \n", j, slice[j])
-	// }
+	for j := 0; j < len(slice); j++ {
+		fmt.Printf("Element %v has value %v \n", j, slice[j])
+	}
 
-	// for i, v := range slice {
-	// 	fmt.Printf("Element %v has value %v \n", i, v)
-	// }
+	for i, v := range slice {
+		fmt.Printf("Element %v has value %v \n", i, v)
+	}
 
-	// sliceByMake := collection.SliceByMake()
-	// fmt.Printf("Len %v:\nCap %v:\n", len(sliceByMake), cap(sliceByMake))
+	sliceByMake := collection.SliceByMake()
+	fmt.Printf("Len %v:\nCap %v:\n", len(sliceByMake), cap(sliceByMake))
 
-	// var mySlice = sliceByMake[:5]
+	var mySlice = sliceByMake[:5]
 
-	// for _, v := range mySlice {
-	// 	fmt.Printf("%v\n", v)
-	// }
+	for _, v := range mySlice {
+		fmt.Printf("%v\n", v)
+	}
 
 	for _, firstName := range iteration.SeparateFullName() {
 		fmt.Printf("%v\n", firstName)
 	}
+
+	//========================SCOPE===========================
+	scope.Scope()
 }
