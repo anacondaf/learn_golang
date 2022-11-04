@@ -11,3 +11,8 @@ func SliceByMake() [10]int {
 
 	return sliceByMake
 }
+
+func StudentFullNameSlice(studentList []string) []string {
+	var students = studentList[:]
+	return students
+}

@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	c "github.com/kainguyen/beginner/calc"
-	"github.com/kainguyen/beginner/collection"
+	"github.com/kainguyen/beginner/iteration"
 	r "github.com/kainguyen/beginner/rune"
 )
 
@@ -21,27 +21,30 @@ func main() {
 	r.GetRuneOfString(funnyString)
 
 	//===================COLLECTION=====================//
-	fmt.Printf("Length of an array: %v\n", len(collection.Array()))
+	// fmt.Printf("Length of an array: %v\n", len(collection.Array()))
 
-	slice := collection.SliceLiteral()
-	slice = append(slice, 1)
-	slice = append(slice, 9)
+	// slice := collection.SliceLiteral()
+	// slice = append(slice, 1)
+	// slice = append(slice, 9)
 
-	for j := 0; j < len(slice); j++ {
-		fmt.Printf("Element %v has value %v \n", j, slice[j])
+	// for j := 0; j < len(slice); j++ {
+	// 	fmt.Printf("Element %v has value %v \n", j, slice[j])
+	// }
+
+	// for i, v := range slice {
+	// 	fmt.Printf("Element %v has value %v \n", i, v)
+	// }
+
+	// sliceByMake := collection.SliceByMake()
+	// fmt.Printf("Len %v:\nCap %v:\n", len(sliceByMake), cap(sliceByMake))
+
+	// var mySlice = sliceByMake[:5]
+
+	// for _, v := range mySlice {
+	// 	fmt.Printf("%v\n", v)
+	// }
+
+	for _, firstName := range iteration.SeparateFullName() {
+		fmt.Printf("%v\n", firstName)
 	}
-
-	for i, v := range slice {
-		fmt.Printf("Element %v has value %v \n", i, v)
-	}
-
-	sliceByMake := collection.SliceByMake()
-	fmt.Printf("Len %v:\nCap %v:\n", len(sliceByMake), cap(sliceByMake))
-
-	var mySlice = sliceByMake[:5]
-
-	for _, v := range mySlice {
-		fmt.Printf("%v\n", v)
-	}
-
 }
