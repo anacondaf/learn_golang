@@ -8,6 +8,7 @@ import (
 	"github.com/kainguyen/beginner/iteration"
 	"github.com/kainguyen/beginner/rune"
 	"github.com/kainguyen/beginner/scope"
+	"github.com/kainguyen/beginner/structType"
 )
 
 func main() {
@@ -52,4 +53,19 @@ func main() {
 
 	//========================SCOPE===========================
 	scope.Scope()
+
+	//=======================STRUCT===========================//
+	var school = structType.University {
+		Id: 19,
+		SchoolName: "UIT",
+		Address: "123",
+	}
+
+	var student1 = structType.Student {
+		FirstName: "Kai",
+    	LastName: "Nguyen",
+		University: school,
+	}
+
+	fmt.Printf("Student %v is attending %v\n", student1.FirstName, student1.University.SchoolName)
 }
