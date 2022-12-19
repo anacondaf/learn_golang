@@ -3,5 +3,3 @@ go 1.19
 use ./beginner
 
 use ./concurrency
-
-use ./revision/rev1
